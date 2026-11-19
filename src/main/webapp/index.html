@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DriveEasy | Login</title>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	min-height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.82)),
+		url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85");
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Navbar */
+header {
+	background: rgba(255, 255, 255, 0.97);
+}
+
+.navbar {
+	max-width: 1200px;
+	height: 75px;
+	margin: auto;
+	padding: 0 25px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	font-size: 28px;
+	font-weight: 900;
+	color: #111;
+}
+
+.logo span {
+	color: #e63946;
+}
+
+/* Main */
+main {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+}
+
+/* Login Card */
+.login-card {
+	width: 100%;
+	max-width: 850px;
+	padding: 55px;
+	background: rgba(255, 255, 255, 0.97);
+	border-radius: 18px;
+	text-align: center;
+	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.login-card h1 {
+	font-size: 38px;
+	color: #111;
+	margin-bottom: 10px;
+}
+
+.login-card h1 span {
+	color: #e63946;
+}
+
+.login-card > p {
+	color: #777;
+	font-size: 15px;
+	margin-bottom: 40px;
+}
+
+/* Login Options */
+.login-options {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 25px;
+}
+
+.login-option {
+	min-height: 230px;
+	border: 2px solid #eee;
+	border-radius: 15px;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+}
+
+.login-option:hover {
+	border-color: #e63946;
+	transform: translateY(-8px);
+	box-shadow: 0 15px 35px rgba(230, 57, 70, 0.15);
+}
+
+/* Icon */
+.icon {
+	width: 75px;
+	height: 75px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: #fff0f1;
+	font-size: 35px;
+	margin-bottom: 20px;
+	transition: 0.3s;
+}
+
+.login-option:hover .icon {
+	background: #e63946;
+	transform: scale(1.08);
+}
+
+/* Text */
+.login-option h2 {
+	color: #111;
+	font-size: 22px;
+	margin-bottom: 8px;
+}
+
+.login-option p {
+	color: #888;
+	font-size: 13px;
+	margin-bottom: 18px;
+}
+
+/* Button */
+.login-btn {
+	padding: 10px 22px;
+	border: none;
+	border-radius: 6px;
+	background: #111;
+	color: white;
+	font-size: 12px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
+.login-btn:hover {
+	background: #e63946;
+}
+
+/* Footer */
+footer {
+	padding: 18px;
+	text-align: center;
+	color: #aaa;
+	font-size: 12px;
+}
+
+/* Sports Car */
+.sports-car {
+	position: relative;
+	width: 110px;
+	height: 50px;
+	overflow: hidden;
+	animation: sportsCarMove 2.5s ease-in-out infinite;
+}
+
+.car-body {
+	position: absolute;
+	width: 70px;
+	height: 22px;
+	left: 20px;
+	top: 18px;
+	background: #e63946;
+	border-radius: 8px 18px 5px 5px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.car-roof {
+	position: absolute;
+	width: 38px;
+	height: 19px;
+	left: 37px;
+	top: 7px;
+	background: #e63946;
+	border-radius: 22px 22px 0 0;
+	transform: skewX(-15deg);
+}
+
+.car-window {
+	position: absolute;
+	width: 13px;
+	height: 9px;
+	top: 10px;
+	background: #111;
+	z-index: 2;
+	transform: skewX(-15deg);
+}
+
+.window-left {
+	left: 43px;
+	border-radius: 6px 2px 0 0;
+}
+
+.window-right {
+	left: 58px;
+	border-radius: 2px 6px 0 0;
+}
+
+.car-wheel {
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	bottom: 4px;
+	background: #111;
+	border-radius: 50%;
+	z-index: 3;
+	animation: wheelRotation 0.5s linear infinite;
+}
+
+.wheel-left {
+	left: 29px;
+}
+
+.wheel-right {
+	left: 70px;
+}
+
+.car-wheel::after {
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	left: 4px;
+	top: 4px;
+	background: #777;
+	border-radius: 50%;
+}
+
+/* Animations */
+@keyframes sportsCarMove {
+	0% {
+		transform: translateX(-8px);
+	}
+
+	50% {
+		transform: translateX(8px);
+	}
+
+	100% {
+		transform: translateX(-8px);
+	}
+}
+
+@keyframes wheelRotation {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+	.login-card {
+		padding: 35px 20px;
+	}
+
+	.login-card h1 {
+		font-size: 30px;
+	}
+
+	.login-options {
+		grid-template-columns: 1fr;
+	}
+
+	.login-option {
+		min-height: 200px;
+	}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+	<nav class="navbar">
+
+		<div class="logo">
+			Drive<span>Easy</span>
+		</div>
+
+		<div class="sports-car">
+			<div class="car-roof"></div>
+
+			<div class="car-window window-left"></div>
+			<div class="car-window window-right"></div>
+
+			<div class="car-body"></div>
+
+			<div class="car-wheel wheel-left"></div>
+			<div class="car-wheel wheel-right"></div>
+		</div>
+
+	</nav>
+</header>
+
+<main>
+
+	<div class="login-card">
+
+		<h1>
+			Welcome to Drive<span>Easy</span>
+		</h1>
+
+		<p>Please select how you want to continue</p>
+
+		<div class="login-options">
+
+			<div class="login-option">
+
+				<div class="icon">👤</div>
+
+				<h2>Customer</h2>
+
+				<p>Login to rent and manage cars</p>
+
+				<a href="customerlogin" class="login-btn">
+					CUSTOMER LOGIN →
+				</a>
+
+			</div>
+
+			<div class="login-option">
+
+				<div class="icon">🔐</div>
+
+				<h2>Admin</h2>
+
+				<p>Manage cars, customers and bookings</p>
+
+				<a href="adminhome" class="login-btn">
+					ADMIN LOGIN →
+				</a>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</main>
+
+<footer>
+	© 2026 DriveEasy. All Rights Reserved.
+</footer>
+
+</body>
+
+</html>

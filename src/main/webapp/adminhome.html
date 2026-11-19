@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveEasy | Admin Home</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.72),
+                    rgba(0, 0, 0, 0.82)
+                ),
+                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: rgba(255, 255, 255, 0.97);
+        }
+
+        .navbar {
+            max-width: 1200px;
+
+            height: 75px;
+
+            margin: auto;
+
+            padding: 0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+
+            font-weight: 900;
+
+            color: #111;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #333;
+
+            transition: 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #e63946;
+
+            color: white;
+
+            border-color: #e63946;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        main {
+            flex: 1;
+
+            padding: 50px 20px;
+        }
+
+
+        /* ================= DASHBOARD ================= */
+
+        .dashboard {
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            padding: 45px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* ================= WELCOME ================= */
+
+        .welcome {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .welcome h1 {
+            color: #111;
+
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+        .welcome h1 span {
+            color: #e63946;
+        }
+
+        .welcome p {
+            color: #777;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= OPTIONS ================= */
+
+        .options {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        /* ================= OPTION CARD ================= */
+
+        .option {
+            padding: 30px;
+
+            background: white;
+
+            border: 2px solid #eeeeee;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .option:hover {
+            border-color: #e63946;
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(230, 57, 70, 0.12);
+        }
+
+        .option h2 {
+            color: #111;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+        .option p {
+            color: #888;
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ================= OPTION BUTTON ================= */
+
+        .option-btn {
+            display: inline-block;
+
+            padding: 10px 22px;
+
+            background: #111;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .option-btn:hover {
+            background: #e63946;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 18px;
+
+            text-align: center;
+
+            color: #aaa;
+
+            font-size: 12px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            .dashboard {
+                padding: 30px 20px;
+            }
+
+            .welcome h1 {
+                font-size: 28px;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Drive<span>Easy</span>
+            </div>
+
+            <a href="logout" class="logout-btn">
+                Logout
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <div class="dashboard">
+
+
+            <!-- ================= WELCOME ================= -->
+
+            <div class="welcome">
+
+                <h1>
+                    Welcome, <span>Admin</span>
+                </h1>
+
+                <p>
+                    Manage your car rental system from here
+                </p>
+
+            </div>
+
+
+            <!-- ================= OPTIONS ================= -->
+
+            <div class="options">
+
+
+                <!-- MANAGE CARS -->
+
+                <div class="option">
+
+                    <h2>
+                        Register Cars
+                    </h2>
+
+                    <p>
+                        Add, update and remove cars from the system.
+                    </p>
+
+                    <a href="registernewcar.html" class="option-btn">
+                        MANAGE CARS
+                    </a>
+
+                </div>
+
+
+                <!-- MANAGE CUSTOMERS -->
+
+                <div class="option">
+
+                    <h2>
+                        Manage Customers
+                    </h2>
+
+                    <p>
+                        View and manage registered customers.
+                    </p>
+
+                    <a href="#" class="option-btn">
+                        MANAGE CUSTOMERS
+                    </a>
+
+                </div>
+
+
+                <!-- MANAGE BOOKINGS -->
+
+                <div class="option">
+
+                    <h2>
+                        Manage Bookings
+                    </h2>
+
+                    <p>
+                        View and manage car rental bookings.
+                    </p>
+
+                    <a href="#" class="option-btn">
+                        MANAGE BOOKINGS
+                    </a>
+
+                </div>
+
+
+                <!-- VIEW REPORTS -->
+
+                <div class="option">
+
+                    <h2>
+                        Reports
+                    </h2>
+
+                    <p>
+                        View rental and system reports.
+                    </p>
+
+                    <a href="#" class="option-btn">
+                        VIEW REPORTS
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 DriveEasy. All Rights Reserved.
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+
+# Compiled Java files
+*.class
+
+# Maven build directory
+target/
+
+# Eclipse IDE files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Server and deployment files
+*.war
+*.ear
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment and secret files
+.env
+.env.*
+!.env.example

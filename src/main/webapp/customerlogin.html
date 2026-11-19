@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveEasy | Customer Login</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.72),
+                    rgba(0, 0, 0, 0.82)
+                ),
+                url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: rgba(255, 255, 255, 0.97);
+        }
+
+        .navbar {
+            max-width: 1200px;
+
+            height: 75px;
+
+            margin: auto;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #111;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        .home-btn {
+            padding: 10px 20px;
+
+            border: 1px solid #ddd;
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            color: #333;
+
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background: #e63946;
+            color: white;
+            border-color: #e63946;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        main {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px;
+        }
+
+
+        /* ================= LOGIN CARD ================= */
+
+        .login-card {
+            width: 100%;
+            max-width: 450px;
+
+            padding: 45px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.45);
+        }
+
+        .login-card h1 {
+            text-align: center;
+
+            font-size: 32px;
+
+            color: #111;
+
+            margin-bottom: 8px;
+        }
+
+        .login-card h1 span {
+            color: #e63946;
+        }
+
+        .subtitle {
+            text-align: center;
+
+            color: #777;
+
+            font-size: 14px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #333;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #e63946;
+
+            box-shadow:
+                0 0 0 2px rgba(230, 57, 70, 0.1);
+        }
+
+
+        /* ================= LOGIN BUTTON ================= */
+
+        .login-btn {
+            width: 100%;
+
+            padding: 13px;
+
+            margin-top: 5px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #111;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #e63946;
+        }
+
+
+        /* ================= REGISTER ================= */
+
+        .register-section {
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #eeeeee;
+
+            text-align: center;
+        }
+
+        .register-section p {
+            color: #777;
+
+            font-size: 13px;
+
+            margin-bottom: 10px;
+        }
+
+        .register-btn {
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            border: 1px solid #e63946;
+
+            border-radius: 6px;
+
+            background: white;
+
+            color: #e63946;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .register-btn:hover {
+            background: #e63946;
+
+            color: white;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 18px;
+
+            text-align: center;
+
+            color: #aaa;
+
+            font-size: 12px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 500px) {
+
+            .navbar {
+                padding: 0 15px;
+            }
+
+            .login-card {
+                padding: 35px 25px;
+            }
+
+            .login-card h1 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                Drive<span>Easy</span>
+            </div>
+
+            <a href="index.html" class="home-btn">
+                Back to Home
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <div class="login-card">
+
+
+            <h1>
+                Customer <span>Login</span>
+            </h1>
+
+            <p class="subtitle">
+                Login to rent and manage your cars
+            </p>
+
+
+            <!-- ================= LOGIN FORM ================= -->
+
+            <form action="customerhome" method="post">
+
+
+                <!-- Mobile -->
+
+                <div class="form-group">
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Enter your mobile number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Login -->
+
+                <button
+                    type="submit"
+                    class="login-btn">
+                    CUSTOMER LOGIN
+                </button>
+
+
+            </form>
+
+
+            <!-- ================= REGISTER ================= -->
+
+            <div class="register-section">
+
+                <p>
+                    Don't have an account?
+                </p>
+
+                <a
+                    href="customerregister.html"
+                    class="register-btn">
+                    REGISTER NOW
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 DriveEasy. All Rights Reserved.
+
+    </footer>
+
+
+</body>
+
+</html>
